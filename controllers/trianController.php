@@ -2,7 +2,7 @@
 
     class trianController {
         public function getAll() {
-            $trains = Trian::getAll();
+            $trains = Train::getAll();
             return $trains;
         }
     }
