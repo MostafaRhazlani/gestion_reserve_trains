@@ -24,6 +24,7 @@ CREATE TABLE voyage(
     description TEXT,
     date_departure TIMESTAMP,
     date_arrival TIMESTAMP NULL DEFAULT NULL,
+    prix int;
     id_train int,
     FOREIGN KEY (id_train) REFERENCES train(id_train) ON DELETE CASCADE
 );

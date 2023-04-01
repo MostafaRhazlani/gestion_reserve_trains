@@ -2,6 +2,6 @@ Options All -Indexes
 
 RewriteEngine On
 
-RewriteBase /gestion_employes_chaine/
+RewriteBase /gestion_reserve_train/
 
 RewriteRule ^([-a-zA-Z0-9]+)$ index.php?page=$1
