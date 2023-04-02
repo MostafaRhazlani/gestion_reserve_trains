@@ -29,6 +29,10 @@
                             <?php if (count($voyages) > 0) {?>
                                 <?php foreach ($voyages as $voyage) :?>
                                     <tr>
+                                        <td> 
+                                            <img  src="<?php echo BASE_URL ."public/images/". $voyage['photo'] ?>"
+                                            width="50px" height="30px" class="rounded-pill">
+                                        </td>
                                         <td><?php echo $voyage['name_train']; ?></td>
                                         <td><?php echo $voyage['departure_s']; ?></td>
                                         <td><?php echo $voyage['arrival_s']; ?></td>
