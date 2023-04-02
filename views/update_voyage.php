@@ -5,7 +5,7 @@ if(isset($_POST['id'])) {
   $voyage = $getVoyage->getById();
 }
 
-$getNameTrains = new trianController();
+$getNameTrains = new trainController();
 $trains = $getNameTrains->getAll();
 
 if(isset($_POST['submit'])) {

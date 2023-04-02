@@ -1,6 +1,6 @@
 <?php
 
-  $getNameTrains = new trianController();
+  $getNameTrains = new trainController();
   $trains = $getNameTrains->getAll();
 
   if(isset($_POST['submit'])) {

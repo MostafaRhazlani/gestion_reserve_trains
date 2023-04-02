@@ -31,7 +31,7 @@
               'id_train' => $_POST['id_train'],
             );
 
-            $voyage = Voyage::getByIdTrian($data['id_voyage'], $data['id_train']);
+            $voyage = Voyage::getByIdTrain($data['id_voyage'], $data['id_train']);
 
             if($voyage == true){
               session::set('info', 'there is a voyage in the same train');
@@ -60,7 +60,7 @@
               'id_train' => $_POST['id_train'],
             );
 
-            $voyage = Voyage::getByIdTrian(null, $data['id_train']);
+            $voyage = Voyage::getByIdTrain(null, $data['id_train']);
 
             if($voyage == true){
               session::set('info', 'there is a voyage in the same train');

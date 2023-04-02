@@ -2,7 +2,7 @@
 
     class Voyage {
         static public function getAll() {
-            $query = "SELECT voyage.*, train.name_train FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train";
+            $query = "SELECT voyage.*, train.name_train, train.photo FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train";
             $result = DB::connect()->prepare($query);
             $result->execute();
             return $result->fetchAll();
@@ -23,7 +23,7 @@
             }
         }
 
-        static public function getByIdTrian($id_voyage, $id_train) {
+        static public function getByIdTrain($id_voyage, $id_train) {
 
             try {
                 if($id_voyage == null) {
