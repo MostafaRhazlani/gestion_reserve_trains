@@ -1,6 +1,7 @@
 <?php
-    $trainController = new trianController();
+    $trainController = new trainController();
     $trains = $trainController->getAll();
+
 ?>
 
 <section class="py-5">
@@ -10,7 +11,7 @@
             <div class="card">
                 <div class="card-header bg-danger text-light">Companies</div>
                 <div class="card-body bg-light">
-                <a href="<?php echo BASE_URL; ?>?page=add_cpmpanies" class="btn btn-sm btn-danger ms-2 mb-2 py-2 px-3">
+                <a href="<?php echo BASE_URL; ?>?page=add_train" class="btn btn-sm btn-danger ms-2 mb-2 py-2 px-3">
                     Add New Voyage
                 </a>
                     <table class="table table-striped">
@@ -28,20 +29,20 @@
                                     <tr>
                                         <td><?php echo $train->name_train; ?></td>
                                         <td> 
-                                            <img  src="<?php echo BASE_URL ."images/". $train->photo ?>"
+                                            <img  src="<?php echo BASE_URL ."public/images/". $train->photo ?>"
                                             width="50px" height="30px" class="rounded-pill">
                                         </td>
                                         <td><?php echo $train->capacity; ?></td>
 
                                         <td class="d-flex flex-tr">
                                             <form action="<?php echo BASE_URL; ?>?page=update_train" method="post" class="mr-1">
-                                                <input type="hidden" name="id" value="">
+                                                <input type="hidden" name="id_train" value="<?php echo $train->id_train; ?>">
                                                 <button class="btn btn-sm btn-danger">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                             </form>
                                             <form action="<?php echo BASE_URL; ?>?page=delete_train" method="post" class="mr-1" onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                <input type="hidden" name="id" value="" >
+                                                <input type="hidden" name="id_train" value="<?php echo $train->id_train; ?>" >
                                                 &nbsp;
                                                 <button class="btn btn-sm btn-warning">
                                                     <i class="fa fa-trash"></i>
