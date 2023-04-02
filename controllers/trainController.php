@@ -42,5 +42,21 @@
               }
             }
         }
+
+        public function delete() {
+          if(isset($_POST['id_train'])) {
+          $data['id_train'] = $_POST['id_train'];
+
+            $result = Train::delete($data);
+
+            if($result === 'ok') {
+              session::set('success', 'The flight has been deleted successfully');
+              redirect::to('?page=train');
+            } else {
+              return $result;
+            }
+
+          }
+        }
     }
 ?>

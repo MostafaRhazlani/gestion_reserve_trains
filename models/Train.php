@@ -38,6 +38,21 @@
             }
         }
 
+        static public function delete($data) {
+            $id_train = $data['id_train'];
+      
+            try {
+                $query = 'DELETE FROM train WHERE id_train = :id_train';
+                $result = DB::connect()->prepare($query);
+                $result->execute(array(":id_train" => $id_train));
+                if($result->execute()) {
+                  return 'ok';
+                }
+            } catch(PDOException $ex) {
+                echo 'error' . $ex->getMessage();
+            }
+          }
+
         // static public function updatZ($data) {
         //     $query = 'UPDATE train SET name_train = :name_train, capacity = :capacity ';
         //     $params = [':name_train' => $data['name_train']];
