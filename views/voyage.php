@@ -21,6 +21,7 @@
                             <th>Arrival Station</th>
                             <th>Date Departure</th>
                             <th>Date Arrival</th>
+                            <th>Capacity</th>
                             <th>Prix</th>
                             <th class="text-center">Actions</th>
                             </tr>
@@ -53,6 +54,9 @@
                                         </td>
                                         <td>
                                         <p class="fw-normal mb-1"><?php echo $voyage['date_arrival']; ?></p>
+                                        </td>
+                                        <td>
+                                        <p class="fw-normal mb-1"><?php echo $voyage['capacity']; ?></p>
                                         </td>
                                         <td>
                                         <p class="fw-normal mb-1"><?php echo $voyage['prix']; ?></p>

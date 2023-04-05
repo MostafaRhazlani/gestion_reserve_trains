@@ -2,7 +2,7 @@
 
     class Voyage {
         static public function getAll() {
-            $query = "SELECT voyage.*, train.name_train, train.photo FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train";
+            $query = "SELECT voyage.*, train.name_train, train.photo, capacity FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train";
             $result = DB::connect()->prepare($query);
             $result->execute();
             return $result->fetchAll();

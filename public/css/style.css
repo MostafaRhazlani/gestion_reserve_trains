@@ -16,3 +16,57 @@
     font-size: 100px;
 }
 
+.voyage-img{
+    object-fit: cover;
+    object-position: center;
+}
+
+.row-line {
+    background: var(--mdb-gray-dark);
+    width: 1px;
+    height: 95%;
+}
+
+.position {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.line {
+    /* position: absolute; */
+    background:  var(--mdb-gray-dark);
+    width: 120px;
+    height: 2px;
+}
+
+.circle {
+    background: #E6F9F8;
+    width: 12px;
+    height: 12px;
+    border: 1px solid red;
+    border-radius:50%;
+}
+
+.circle-left {
+    position: absolute;
+    left: -5px;
+    top: 36px;
+}
+
+.circle-right {
+    position: absolute;
+    right: -7px;
+    top: 36px;
+}
+
+.color {
+    background: #EAF4FF;
+}
+
+section {
+    height: 100vh;
+    background: #E6F9F8;
+}
