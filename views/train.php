@@ -6,7 +6,7 @@
 
 <section class="py-5">
     <div class="container">
-        <div class="col-12 col-md-10 mx-auto">
+        <div class="col-10 col-md-8 mx-auto">
             <?php include('./views/includes/alerts.php'); ?>
             <div class="card">
                 <div class="card-header bg-danger text-light">Companies</div>
@@ -17,8 +17,8 @@
                     <table class="table align-middle mb-0 bg-white">
                         <thead>
                             <tr>
-                                <th>Train</th>
                                 <th>Photo</th>
+                                <th>Train</th>
                                 <th>Capacity</th>
                                 <th class="text-center">Action</th>
                             </tr>
@@ -27,7 +27,6 @@
                             <?php if (count($trains) > 0) {?>
                                 <?php foreach ($trains as $train) :?>
                                     <tr>
-                                        <td><?php echo $train->name_train; ?></td>
                                         <td> 
                                             <img
                                                 src="<?php echo BASE_URL ."public/images/". $train->photo ?>"
@@ -36,6 +35,7 @@
                                                 class="rounded-circle"
                                             />
                                         </td>
+                                        <td><?php echo $train->name_train; ?></td>
                                         <td><?php echo $train->capacity; ?></td>
 
                                         <td>

@@ -61,6 +61,9 @@
                                 <a class="nav-link" href="<?php echo BASE_URL;?>?page=voyage">Voyage</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="<?php echo BASE_URL;?>?page=client-voyage">Tickets</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="<?php echo BASE_URL;?>?page=train">Train</a>
                             </li>
                             <li class="nav-item">
