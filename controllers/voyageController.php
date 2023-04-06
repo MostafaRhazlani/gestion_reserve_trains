@@ -90,7 +90,18 @@
             } else {
               return $result;
             }
+          }
+        }
 
+        public function findVoyage() {
+          if(isset($_GET['by_departure']) && isset($_GET['by_arrival']) && isset($_GET['by_date'])) {
+            $data = array(
+              'by_departure' => $_GET['by_departure'],
+              'by_arrival' => $_GET['by_arrival'],
+              'by_date' => $_GET['by_date'],
+            );
+            $voyages = Voyage::searchVoyage($data);
+            return $voyages;
           }
         }
     }

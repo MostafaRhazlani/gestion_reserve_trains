@@ -18,16 +18,11 @@ if(isset($_POST['submit'])) {
 <div class="container">
   <div class="row my-5">
     <div class="col-md-6 mx-auto">
-    <?php include('./views/includes/alerts.php'); ?>
       <div class="card">
         <div class="card-header bg-danger text-light ">Modifier un voyage</div>
         <div class="card-body bg-light">
-          <a href="<?php echo BASE_URL; ?>?page=voyage" class="btn btn-sm btn-warning ms-2 mb-2">
-            <i class="fas fa-home"></i>
-          </a>
             <form action="" method="post">
               <div class="input-group mb-3">
-                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
                 <select name="id_train" class="form-select" id="inputGroupSelect01">
                   <?php foreach ($trains as $train) :?>
                       <option value="<?php echo $train->id_train ?>" <?php if($voyage->id_train == $train->id_train) echo "selected" ?> >
@@ -40,12 +35,16 @@ if(isset($_POST['submit'])) {
 
               <div class="form-group mb-4">
                 <label class="ms-2" for="departure_s">Departure Station</label>
-                <input type="text" name="departure_s" value="<?php echo $voyage->departure_s ?>" class="form-control" placeholder="Departure station" id="departure_s">
+                <select name="departure_s" class="form-select" aria-label="Default select example" id="departure_s">
+                    <option value="">Departure Station</option>
+                </select>
               </div>
 
               <div class="form-group mb-4">
                 <label class="ms-2" for="arrival_s">Arrival Station</label>
-                <input type="text" name="arrival_s" value="<?php echo $voyage->arrival_s ?>" class="form-control" placeholder="Arrival station" id="arrival_s">
+                <select name="arrival_s" class="form-select" aria-label="Default select example" id="arrival_s">
+                  <option value="">Departure Station</option>
+                </select>
               </div>
 
               <div class="form-group mb-4">
@@ -63,8 +62,11 @@ if(isset($_POST['submit'])) {
                 <input type="number" name="prix" value="<?php echo $voyage->prix ?>" class="form-control" placeholder="Prix" id="prix">
               </div>
 
-              <div class="form-group mb-2">
+              <div class="form-group mb-2 float-end">
                 <button type="submit" class="btn btn-danger" name="submit">Valider</button>
+                <a href="<?php echo BASE_URL; ?>?page=voyage" class="btn btn btn-secondary px-4">
+                  Close
+                </a>
               </div>
             </form>
         </div>
