@@ -1,7 +1,7 @@
 <?php
     session_start();
-    spl_autoload_register('autoload');
     require_once ('./base_url.php');
+    spl_autoload_register('autoload');
 
     function autoload($class_name) {
         $array_paths = [
