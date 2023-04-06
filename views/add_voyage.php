@@ -18,27 +18,25 @@
         <div class="card-body bg-light">
             <form action="" method="post">
               <div class="input-group mb-3">
-                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
-                <select name="id_train" class="form-select" id="inputGroupSelect01">
+                <select name="id_train" class="form-select" aria-label="Default select example" id="trains">
                   <?php foreach ($trains as $train) :?>
-                      <option value="<?php echo $train->id_train ?>" >
-                        <?php echo $train->name_train; ?>
-                      </option>
+                    <option value="<?php echo $train->id_train ?>" >
+                      <?php echo $train->name_train; ?>
+                    </option>
                   <?php endforeach; ?>
                 </select>
               </div>
 
               <div class="form-group mb-4">
                 <label class="ms-2" for="departure_s">Departure Station</label>
-                <select name="departure_s" class="form-control select2" id="departure_s">
-                  <option value="">Departure Station</option>
+                <select name="departure_s" class="form-select" aria-label="Default select example" id="departure_s">
+                    <option value="">Departure Station</option>
                 </select>
               </div>
 
               <div class="form-group mb-4">
                 <label class="ms-2" for="arrival_s">Arrival Station</label>
-                <!-- <input type="text" name="arrival_s" class="form-control" placeholder="Arrival station" id="arrival_s"> -->
-                <select name="arrival_s" class="form-control select2" id="arrival_s">
+                <select name="arrival_s" class="form-select" aria-label="Default select example" id="arrival_s">
                   <option value="">Departure Station</option>
                 </select>
               </div>
@@ -70,43 +68,3 @@
     </div>
   </div>
 </div>
-
-
-<script>
-  // Get a reference to the select element
-  const departure_s = document.getElementById('departure_s');
-  const arrival_s = document.getElementById('arrival_s');
-
-  // Fetch data from API and fill select options
-  fetch('https://countriesnow.space/api/v0.1/countries/cities', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      country: 'morocco'
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-      fill_select(data);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-
-  function fill_select(data) {
-    data.data.forEach(city => {
-      const option_departure_s = document.createElement('option');
-      const option_arrival_s = document.createElement('option');
-
-      option_departure_s.value = city;
-      option_departure_s.textContent = city;
-      departure_s.appendChild(option_departure_s);
-
-      option_arrival_s.value = city;
-      option_arrival_s.textContent = city;
-      arrival_s.appendChild(option_arrival_s);
-    });
-  }
-</script>

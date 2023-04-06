@@ -100,6 +100,23 @@
                 echo 'Error: '.$ex->getMessage();
             }
         }
+
+        static public function searchVoyage($data) {
+            $departure = $data['by_departure'];
+            $arrival = $data['by_arrival'];
+            $date = $data['by_date'];
+            
+            try {
+                $query = 'SELECT voyage.*, train.name_train, train.photo, capacity FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train WHERE departure_s LIKE ? AND arrival_s LIKE ? AND date_departure LIKE ?';
+                $result = DB::connect()->prepare($query);
+                $result->execute(array('%'.$departure.'%', '%'.$arrival.'%', '%'.$date.'%'));
+                return $result->fetchAll();
+            } catch(PDOException $ex) {
+                echo 'Error' . $ex->getMessage();
+            }
+        }
     }
+
+    
 
 ?>

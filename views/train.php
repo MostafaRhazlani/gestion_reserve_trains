@@ -40,14 +40,14 @@
 
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <form action="<?php echo BASE_URL; ?>?page=update_voyage" method="post" class="mr-1">
-                                                    <input type="hidden" name="id" value="<?php echo $voyage['id_voyage'];?>">
+                                                <form action="<?php echo BASE_URL; ?>?page=update_train" method="post" class="mr-1">
+                                                    <input type="hidden" name="id_train" value="<?php echo $train->id_train;?>">
                                                     <button type="submit" class="btn btn-link btn-sm btn-rounded">
                                                         Edit
                                                     </button>
                                                 </form>
                                                 <form action="<?php echo BASE_URL; ?>?page=delete_voyage" method="post" class="mr-1" onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="<?php echo $voyage['id_voyage'];?>">
+                                                    <input type="hidden" name="id" value="<?php echo $train->id_train;?>"/>
                                                     <button type="submit" class="btn btn-link btn-sm btn-rounded">
                                                         Delete
                                                     </button>
