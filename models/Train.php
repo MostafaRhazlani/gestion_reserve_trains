@@ -51,30 +51,8 @@
             } catch(PDOException $ex) {
                 echo 'error' . $ex->getMessage();
             }
-          }
+        }
 
-        // static public function updatZ($data) {
-        //     $query = 'UPDATE train SET name_train = :name_train, capacity = :capacity ';
-        //     $params = [':name_train' => $data['name_train']];
-        //     $params[':capacity'] = $data['capacity'];
-
-            
-        //     if(!empty($data['photo'])) {
-        //         $query .= ', photo = :photo';
-        //         $params[':photo'] = $data['photo'];
-        //     }
-            
-        //     $query .= 'WHERE id_train = :id_train';
-        //     $params[':id_train'] = $data['id_train'];
         
-        //     $result = DB::connect()->prepare($query);
-            
-        
-        //     if($result->execute($params)){
-        //         return 'ok';
-        //     } else {
-        //         return 'error';
-        //     }
-        // }
     }
 ?>
