@@ -5,7 +5,7 @@
 
     $home = new homeController();
 
-    $pages = ["home","voyage","reserve","reservations","add_voyage","update_voyage","delete_voyage", "train", "add_train", "update_train", "delete_train", "client-voyage"];
+    $pages = ["home","voyage","reserve","reservations","add_voyage","update_voyage","delete_voyage", "train", "add_train", "update_train", "delete_train", "client-voyage", "login-register"];
 
     if(isset($_GET['page'])) {
         if(in_array($_GET['page'], $pages)) {
