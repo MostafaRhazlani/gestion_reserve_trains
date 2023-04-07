@@ -21,17 +21,15 @@
                             </li>
                         </ul>
                         <div class="d-flex">
-                            <button type="button" class="btn btn-danger btn-rounded">Register</button>
-                            <button type="button" class="btn btn-success btn-rounded ms-2">Login</button>
                             <div class="dropdown">
                                 <a class="ms-2" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
                                     <img src="<?php echo BASE_URL; ?>public/images/images.png" alt="" width="50" height="50" class="rounded-circle" >
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                     <li><a class="dropdown-item" href="#"> <i class="fas fa-user-alt pe-2"></i>My Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"> <i class="far fa-calendar-check pe-2"></i>My Reservations</a></li>
                                     <li><a class="dropdown-item" href="#"> <i class="fas fa-cog pe-2"></i>Settings</a></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo BASE_URL;?>?page=login-register"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -49,29 +47,26 @@
             <div class=" col-10 mx-auto">
                 <div class="card-body bg-light rounded ">
                     <form action="<?php echo BASE_URL; ?>?page=client-voyage" method="post" class="row p-4">
-                        <div class="col mx-1">
-                            <div class="mb-2">
-                                <span><i class="fa-solid fa-location-dot"></i></span>
-                                <label for="" class="">Departure Station</label>
+                        <div class="col-3">
+                            <div class="input-field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" placeholder="Departure station">
                             </div>
-                            <input type="text" class="form-control" placeholder="Departure Station" aria-label="First name" id="departure_s">
                         </div>
-                        <div class="col mx-1">
-                            <div class="mb-2">
-                                <span><i class="fa-solid fa-location-dot"></i></span>
-                                <label for="">Arrival Station</label>
+                        <div class="col-3">
+                            <div class="input-field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" placeholder="Arrival station">
                             </div>
-                        <input type="text" class="form-control" placeholder="Arrival Station" aria-label="First name" id="arrival_s">
                         </div>
-                        <div class="col mx-1">
-                            <div class="mb-2">
-                                <span><i class="fa-solid fa-calendar-days"></i></span>
-                                <label for="">Date Departure</label>
+                        <div class="col-3">
+                            <div class="input-field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="date">
                             </div>
-                            <input type="date" class="form-control" aria-label="First name">
                         </div>
-                        <div class="col-2 mx-1 d-flex align-items-end">
-                            <button type="submit" class="btn btn-danger w-100 h-100"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="col-3 d-flex align-items-center">
+                            <button type="submit" class="btn btn-danger rounded-pill w-100 h-75"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
                     </form>
                 </div>

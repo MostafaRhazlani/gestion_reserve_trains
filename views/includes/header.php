@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Reserve Train</title>
+    <!-- my style css -->
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>public/css/style.css">
+
     <!-- bootstrap and mdb -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>public/css/mdb.min.css">
@@ -16,14 +19,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>public/css/dropify.min.css">
 
-    <!-- my style css -->
-    <link rel="stylesheet" href="<?php echo BASE_URL ?>public/css/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
-
+    
     <!-- script bootstrap and mdb -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     <script src="<?php echo BASE_URL ?>public/js/mdb.min.js"></script>
@@ -36,11 +37,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
     <script src="<?php echo BASE_URL ?>public/js/dropify.min.js"></script>
 </head>
-<?php if($_GET['page'] != 'home') { ?>
+<?php if($_GET['page'] != 'home' && $_GET['page'] != 'login-register') { ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
 
         <div class="container-fluid">
-
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -110,7 +110,7 @@
                         <li><a class="dropdown-item" href="#"> <i class="far fa-calendar-check pe-2"></i>My Reservations</a></li>
                         <li><a class="dropdown-item" href="#"> <i class="fas fa-cog pe-2"></i>Settings</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
+                        <li><a class="dropdown-item" href="<?php BASE_URL; ?>?page=login-register"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
