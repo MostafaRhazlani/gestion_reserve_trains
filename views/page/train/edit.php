@@ -1,14 +1,14 @@
 <?php
 
-if(isset($_POST['id_train'])) {
-  $getTrain = new trainController();
-  $trains = $getTrain->getByIdTrain();
-}
+// if(isset($_POST['id_train'])) {
+//   $getTrain = new trainController();
+//   $trains = $getTrain->getByIdTrain();
+// }
 
-if(isset($_POST['submit'])) {
-  $updateTrain = new trainController();
-  $updateTrain->update();
-}
+// if(isset($_POST['submit'])) {
+//   $updateTrain = new trainController();
+//   $updateTrain->update();
+// }
 ?>
 
 
@@ -17,9 +17,9 @@ if(isset($_POST['submit'])) {
     <div class="col-md-6 mx-auto">
     <?php include('./views/includes/alerts.php'); ?>
       <div class="card">
-        <div class="card-header bg-danger text-light ">Modifier un train</div>
+        <div class="card-header bg-danger text-light ">Edition a train</div>
         <div class="card-body bg-light">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="<?php echo BASE_URL; ?>train/update" method="post" enctype="multipart/form-data">
 
                 <div class="form-group mb-4">
                     <label class="ms-2" for="name_train">Train</label>
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])) {
 
                 <div class="form-group mb-2 d-flex justify-content-end">
                     <button type="submit" class="btn btn-danger" name="submit">Valider</button>
-                    <a href="<?php echo BASE_URL; ?>?page=train" class="btn btn btn-secondary ms-2 px-4">
+                    <a href="<?php echo BASE_URL; ?>/train/index" class="btn btn btn-secondary ms-2 px-4">
                     Close
                     </a>
                 </div>

@@ -1,20 +1,3 @@
-<?php
-    if(isset($_GET['by_departure']) && isset($_GET['by_arrival']) && isset($_GET['by_date'])) {
-        $voyageController = new voyageController();
-        $voyages = $voyageController->findVoyage();
-    } else {
-        $voyageController = new voyageController();
-        $voyages = $voyageController->getAll();
-    }
-        
-    function timeDeff($endtimestamp, $starttimestamp) {
-        $origin = date_create($endtimestamp);
-        $target = date_create($starttimestamp);
-            $interval = date_diff($origin, $target);
-            echo $interval->format('%H : %i');
-    }
-?>
-
 <div class="container mt-5">
     <div class="col-12 d-flex">
         <!-- search -->
@@ -22,13 +5,13 @@
             <div class="card h-100vh">
                 <div class="card-body">
                     <h4 class="card-title">Search</h4>
-                    <form action="<?php echo BASE_URL; ?>" method="get">
+                    <form action="<?php echo BASE_URL; ?>" method="post">
                         <input type="hidden" name="page" value="client-voyage"/>
                         <div class="mb-4">
                             <input type="text" name="by_departure" id="typeText" placeholder="Departure station" class="form-control form-control-lg" />
                         </div>
                         <div class="mb-4">
-                            <input type="text" name="by_arrival" id="formControlLg" placeholder="Arrival Station" class="form-control form-control-lg" />
+                        <input type="text" name="by_arrival" id="formControlLg" placeholder="Arrival Station" class="form-control form-control-lg" />
                         </div>
                         <div class="mb-4">
                             <input type="date" name="by_date" id="formControlLg" class="form-control form-control-lg" />

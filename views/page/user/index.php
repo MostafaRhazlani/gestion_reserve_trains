@@ -1,17 +1,18 @@
 <div id="containers" class="containers">
     <div class="forms_container">
         <div class="signin_signup">
-            <form action="" class="sign_in_form">
+            <!-- sign in -->
+            <form action="<?php echo BASE_URL?>user/auth" method="post" class="sign_in_form">
                 <h2 class="itle">Sign in</h2>
                 <div class="input-field">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" name="username" placeholder="username">
                 </div>
                 <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="text" placeholder="Password">
+                    <input type="text" name="password" placeholder="Password">
                 </div>
-                <input type="submit" value="Login" class="btn btn-danger rounded-pill solid">
+                <button type="submit" name="submit" class="btn btn-danger rounded-pill solid">Login</button>
 
                 <p class="social-text">Or Sign in with social platforms</p>
                 <div class="social-media">
@@ -30,7 +31,8 @@
                 </div>
             </form>
 
-            <form action="" class="sign_up_form">
+            <!-- sign up -->
+            <form action="" method="post" class="sign_up_form">
                 <h2 class="itle">Sign up</h2>
                 <div class="input-field">
                     <i class="fa-solid fa-user"></i>
@@ -66,6 +68,7 @@
     </div>
 
     <div class="panels-container">
+        <!-- button sign up -->
         <div class="panel left-panel">
             <div class="content">
                 <h3>New here ?</h3>
@@ -76,6 +79,7 @@
             <img src="<?php echo BASE_URL;?>public/logo/login.svg" class="image" alt="">
         </div>
 
+        <!-- button sign in -->
         <div class="panel right-panel">
             <div class="content">
                 <h3>One of us</h3>

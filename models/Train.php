@@ -8,6 +8,21 @@
             return $nameTrain;
         }
 
+        static public function store($data) {
+            $query = "INSERT INTO train(name_train, photo, capacity) VALUES (:name_train, :photo, :capacity)";
+
+            $result = DB::connect()->prepare($query);
+            $result->bindParam(':name_train',$data['name_train']);
+            $result->bindParam(':photo',$data['photo']);
+            $result->bindParam(':capacity',$data['capacity']);
+        
+            if($result->execute($data)){
+                return 'ok';
+            } else {
+                return 'error';
+            }
+        }
+
         static public function getByIdTrain($data) {
             $id_train = $data['id_train'];
 

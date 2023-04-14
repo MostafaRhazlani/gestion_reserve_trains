@@ -29,7 +29,7 @@
                                     <li><a class="dropdown-item" href="#"> <i class="fas fa-user-alt pe-2"></i>My Profile</a></li>
                                     <li><a class="dropdown-item" href="#"> <i class="far fa-calendar-check pe-2"></i>My Reservations</a></li>
                                     <li><a class="dropdown-item" href="#"> <i class="fas fa-cog pe-2"></i>Settings</a></li>
-                                    <li><a class="dropdown-item" href="<?php echo BASE_URL;?>?page=login-register"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo BASE_URL;?>user/logout"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -46,27 +46,27 @@
         <div class="col-12">
             <div class=" col-10 mx-auto">
                 <div class="card-body bg-light rounded ">
-                    <form action="<?php echo BASE_URL; ?>?page=client-voyage" method="post" class="row p-4">
+                    <form action="<?php echo BASE_URL; ?>voyage/findVoyage" method="get" class="row p-4">
                         <div class="col-3">
                             <div class="input-field">
                                 <i class="fa-solid fa-user"></i>
-                                <input type="text" placeholder="Departure station">
+                                <input type="text" name="by_departure" placeholder="Departure station">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="input-field">
                                 <i class="fa-solid fa-user"></i>
-                                <input type="text" placeholder="Arrival station">
+                                <input type="text" name="by_arrival" placeholder="Arrival station">
                             </div>
                         </div>
                         <div class="col-3">
                             <div class="input-field">
                                 <i class="fa-solid fa-user"></i>
-                                <input type="date">
+                                <input type="date" name="by_date">
                             </div>
                         </div>
                         <div class="col-3 d-flex align-items-center">
-                            <button type="submit" class="btn btn-danger rounded-pill w-100 h-75"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button type="submit" name="submit" class="btn btn-danger rounded-pill w-100 h-75"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
                     </form>
                 </div>

@@ -1,9 +1,3 @@
-<?php
-    $trainController = new trainController();
-    $trains = $trainController->getAll();
-
-?>
-
 <section class="py-5">
     <div class="container">
         <div class="col-10 col-md-8 mx-auto">
@@ -11,7 +5,7 @@
             <div class="card">
                 <div class="card-header bg-danger text-light">Companies</div>
                 <div class="card-body bg-light">
-                <a href="<?php echo BASE_URL; ?>?page=add_train" class="btn btn-sm btn-danger ms-2 mb-2 py-2 px-3">
+                <a href="<?php echo BASE_URL; ?>train/create" class="btn btn-sm btn-danger ms-2 mb-2 py-2 px-3">
                     Add New Voyage
                 </a>
                     <table class="table align-middle mb-0 bg-white">
@@ -40,14 +34,14 @@
 
                                         <td>
                                             <div class="d-flex justify-content-center">
-                                                <form action="<?php echo BASE_URL; ?>?page=update_train" method="post" class="mr-1">
+                                                <form action="<?php echo BASE_URL; ?>train/edit" method="post" class="mr-1">
                                                     <input type="hidden" name="id_train" value="<?php echo $train->id_train;?>">
                                                     <button type="submit" class="btn btn-link btn-sm btn-rounded">
                                                         Edit
                                                     </button>
                                                 </form>
-                                                <form action="<?php echo BASE_URL; ?>?page=delete_voyage" method="post" class="mr-1" onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="<?php echo $train->id_train;?>"/>
+                                                <form action="<?php echo BASE_URL; ?>train/delete" method="post" class="mr-1" onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
+                                                    <input type="hidden" name="id_train" value="<?php echo $train->id_train;?>"/>
                                                     <button type="submit" class="btn btn-link btn-sm btn-rounded">
                                                         Delete
                                                     </button>
