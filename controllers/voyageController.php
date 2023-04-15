@@ -7,8 +7,6 @@
         include('./views/page/voyage/index.php');
       }
 
-
-
       public function create() {
         $trains = Train::getAll();
         $newVoyage = voyageController::store();
