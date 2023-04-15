@@ -131,15 +131,15 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <div class="modal-header d-flex flex-column-reverse">
+                <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Reserve Your Voyage</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="col-11 mx-auto">
                         <div class="col-12">
-                            <div class="mb-5">
-                                <button class="btn btn-danger rounded-pill" type="button" 
+                            <div class="mb-3">
+                                <button class="btn btn-danger rounded" type="button" 
                                         data-bs-toggle="collapse" 
                                         data-bs-target="#flush-collapseOne" 
                                         aria-expanded="false" 
@@ -154,27 +154,33 @@
                                     data-bs-parent="#accordionFlushExample"
                                 >
                                     <div class="accordion-body">
-                                        <form action="">
-                                            <div class="col-10 mx-auto mt-3 d-flex justify-content-between">
-                                                <div class="col-5 ">
+                                        <form action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                                            <div class="col-8 mx-auto mt-3 d-flex justify-content-between">
+                                                <div class="col-5">
                                                     <div class="form-group">
                                                         <label for="">First Name</label>
-                                                        <input type="text" class="form-control mb-3" placeholder="First Name">
+                                                        <label for="" class="validation-error d-none" id="ValidationError">This field is required</label>
+                                                        <input type="text" name="firstName" id="firstName" class="form-control mb-3" placeholder="First Name">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">Last Name</label>
-                                                        <input type="text" class="form-control" placeholder="Last Name">
+                                                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
                                                     </div>
                                                 </div>
                                                 <div class="col-5">
                                                     <div class="form-group">
                                                         <label for="">CIN</label>
-                                                        <input type="text" class="form-control mb-3" placeholder="Enter Your CIN">
+                                                        <input type="text" name="cin" id="cin" class="form-control mb-3" placeholder="Enter Your CIN">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">Phone</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Your Phone">
+                                                        <input type="Number" name="number" id="number" class="form-control" placeholder="Enter Your Phone">
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-8 mx-auto mt-3">
+                                                <div class=" d-flex justify-content-center">
+                                                    <input type="submit" value="Add" class="btn btn-primary w-25" name="submit"></input>
                                                 </div>
                                             </div>
                                         </form>
@@ -182,8 +188,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="height: 300px; overflow: scroll;">
-                            <table class="table table-striped table-hover">
+                        <div class="list" style="height: 300px; overflow: scroll;">
+                            <table id="employeeList" class="table table-striped table-hover">
                                 <thead class="sticky-top bg-light">
                                     <tr>
                                         <th class="text-primary" scope="col">Full Name</th>
@@ -197,103 +203,7 @@
                                         <th scope="row">Mostafa Rhazlani</th>
                                         <td>HH2003</td>
                                         <td>0771537210</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <form action="" method="post" class="mr-1"
-                                                    onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="">
-                                                    <button type="submit"
-                                                        class="btn btn-link btn-sm btn-rounded text-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Othmane Rhazlani</th>
-                                        <td>NN1998</td>
-                                        <td>0771000811</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <form action="" method="post" class="mr-1"
-                                                    onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="">
-                                                    <button type="submit"
-                                                        class="btn btn-link btn-sm btn-rounded text-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Azdin Rhazlani</th>
-                                        <td>AA2007</td>
-                                        <td>0680026000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <form action="" method="post" class="mr-1"
-                                                    onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="">
-                                                    <button type="submit"
-                                                        class="btn btn-link btn-sm btn-rounded text-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Azdin Rhazlani</th>
-                                        <td>AA2007</td>
-                                        <td>0680026000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <form action="" method="post" class="mr-1"
-                                                    onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="">
-                                                    <button type="submit"
-                                                        class="btn btn-link btn-sm btn-rounded text-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Azdin Rhazlani</th>
-                                        <td>AA2007</td>
-                                        <td>0680026000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <form action="" method="post" class="mr-1"
-                                                    onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="">
-                                                    <button type="submit"
-                                                        class="btn btn-link btn-sm btn-rounded text-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Azdin Rhazlani</th>
-                                        <td>AA2007</td>
-                                        <td>0680026000</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center">
-                                                <form action="" method="post" class="mr-1"
-                                                    onclick="return confirm('واش باغي تمحي هاذ الخرا ولا لا')">
-                                                    <input type="hidden" name="id" value="">
-                                                    <button type="submit"
-                                                        class="btn btn-link btn-sm btn-rounded text-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -302,9 +212,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Reserve Now</button>
+                    <button type="button" class="btn btn-danger w-25">Reserve Now</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+	
