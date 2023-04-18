@@ -79,11 +79,11 @@ function insertNewRecord(data) {
     var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
     cell1 = newRow.insertCell(0);
-    cell1.innerHTML = data.firstName +" "+ data.lastName;
+    cell1.innerHTML = `<input type="text" name="fullname_passage[]" value="${data.firstName + " " + data.lastName}" />`;
     cell2 = newRow.insertCell(1);
-    cell2.innerHTML = data.cin;
+    cell2.innerHTML = `<input type="text" name="CIN[]" value="${data.cin}"/>`;
     cell3 = newRow.insertCell(2);
-    cell3.innerHTML = data.number;
+    cell3.innerHTML = `<input type="text" name="phone[]" value="${data.number}"/>`;
     cell3 = newRow.insertCell(3);
     cell3.innerHTML = ` <div class="text-center">
                       <a class="btn btn-light rounded-pill btn-sm text-danger" 
@@ -134,3 +134,10 @@ function validate() {
     }
     return isValid;
 }
+
+// submit form
+
+// function submitForm() {
+//   document.getElementById("form").submit;
+//   console.log(document.getElementById("form").submit);
+// }

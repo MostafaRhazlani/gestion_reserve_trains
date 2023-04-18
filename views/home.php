@@ -22,13 +22,14 @@
                         </ul>
                         <div class="d-flex">
                             <div class="dropdown">
-                                <a class="ms-2" href="#" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
+                                <a class="ms-2" href="" role="button" id="dropdownMenuLink" data-mdb-toggle="dropdown" aria-expanded="false">
                                     <img src="<?php echo BASE_URL; ?>public/images/images.png" alt="" width="50" height="50" class="rounded-circle" >
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                     <li><a class="dropdown-item" href="#"> <i class="fas fa-user-alt pe-2"></i>My Profile</a></li>
                                     <li><a class="dropdown-item" href="#"> <i class="far fa-calendar-check pe-2"></i>My Reservations</a></li>
                                     <li><a class="dropdown-item" href="#"> <i class="fas fa-cog pe-2"></i>Settings</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
                                     <li><a class="dropdown-item" href="<?php echo BASE_URL;?>user/logout"> <i class="fas fa-door-open pe-2"></i>Logout</a></li>
                                 </ul>
                             </div>

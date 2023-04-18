@@ -1,5 +1,6 @@
 
 <?php
+    ob_start();
     require_once './autoload.php';
     require_once './views/includes/header.php';
     include_once ('./route.php');
@@ -9,4 +10,6 @@
     Route::contentToRender();
       
     require_once('./views/includes/footer.php');
+
+    ob_flush();
 ?>
