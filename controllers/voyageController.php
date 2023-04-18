@@ -42,6 +42,16 @@
         }
       }
 
+      public function getByIdVoyage() {
+        if(isset($_POST['id'])){
+          $data = array(
+            'id' => $_POST['id']
+          );
+          $voyages = Voyage::getById($data);
+          include('./views/page/client/reserve.php');
+        }
+      }
+
       public function edit() {
         if(isset($_POST['id'])){
           $data = array(
@@ -53,6 +63,8 @@
           include('./views/page/voyage/edit.php');
         }
       }
+
+      
 
       public function update() {
 
