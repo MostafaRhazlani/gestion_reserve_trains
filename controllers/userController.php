@@ -14,7 +14,7 @@
                 
                 if($result->username === $_POST['username'] && md5($_POST['password']) === $result->password) {
                   $_SESSION['logged'] = true;
-                  $_SESSION['username'] = $result->username;
+                  $_SESSION['user'] = $result;
                   redirect::to(BASE_URL.'home');
                 } else {
                   session::set('error', 'Pseudo ou mot de passe est incorrect');
