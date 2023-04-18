@@ -1,4 +1,7 @@
 <div class="container mt-5">
+    <div class="col-12">
+        <h2>Date Departure <span><?php echo $_GET['by_date'];?></span></h2>
+    </div>
     <div class="col-12 d-flex">
         <!-- search -->
         <div class="col-3">
@@ -79,38 +82,10 @@
                                         </div>
                                         <div class="col-3 text-center p-3">
                                             <h1 class="mb-4"><?php echo $voyage['prix']; ?> <span class="fs-5">MAD</span></h1>
-                                            <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">Reserve</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <div class="border p-2 rounded-pill">
-                                            <div class="d-flex justify-content-end">
-                                                
-                                                <button class="btn btn-danger rounded-pill w-25" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                    Show More
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <strong>This is the first item's accordion body.</strong> It is shown by default,
-                                            until
-                                            the collapse
-                                            plugin adds the appropriate classes that we use to style each element. These classes
-                                            control the
-                                            overall appearance, as well as the showing and hiding via CSS transitions. You can
-                                            modify any of
-                                            this with custom CSS or overriding our default variables. It's also worth noting
-                                            that
-                                            just about any
-                                            HTML can go within the <code>.accordion-body</code>, though the transition does
-                                            limit
-                                            overflow.
+                                            <form action="<?php BASE_URL ?>getByIdVoyage" method="post">
+                                                <input type="hidden" name="id" value="<?php echo $voyage['id_voyage']?>">
+                                                <button type="submit" class="btn btn-danger w-100">Reserve</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -126,97 +101,5 @@
         </div>
         <!-- end card -->
     </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Reserve Your Voyage</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-11 mx-auto">
-                        <div class="col-12">
-                            <div class="mb-3">
-                                <button class="btn btn-danger rounded" type="button" 
-                                        data-bs-toggle="collapse" 
-                                        data-bs-target="#flush-collapseOne" 
-                                        aria-expanded="false" 
-                                        aria-controls="flush-collapseOne"
-                                >
-                                    Reserve for your friends
-                                </button>
-
-                                <!-- Accordion -->
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" 
-                                    aria-labelledby="flush-headingOne" 
-                                    data-bs-parent="#accordionFlushExample"
-                                >
-                                    <div class="accordion-body">
-                                        <form action="" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                                            <div class="col-8 mx-auto mt-3 d-flex justify-content-between">
-                                                <div class="col-5">
-                                                    <div class="form-group">
-                                                        <label for="">First Name</label>
-                                                        <label for="" class="validation-error d-none" id="ValidationError">This field is required</label>
-                                                        <input type="text" name="firstName" id="firstName" class="form-control mb-3" placeholder="First Name">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="">Last Name</label>
-                                                        <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-5">
-                                                    <div class="form-group">
-                                                        <label for="">CIN</label>
-                                                        <input type="text" name="cin" id="cin" class="form-control mb-3" placeholder="Enter Your CIN">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="">Phone</label>
-                                                        <input type="Number" name="number" id="number" class="form-control" placeholder="Enter Your Phone">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-8 mx-auto mt-3">
-                                                <div class=" d-flex justify-content-center">
-                                                    <input type="submit" value="Add" class="btn btn-primary w-25" name="submit"></input>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list" style="height: 300px; overflow: scroll;">
-                            <table id="employeeList" class="table table-striped table-hover">
-                                <thead class="sticky-top bg-light">
-                                    <tr>
-                                        <th class="text-primary" scope="col">Full Name</th>
-                                        <th class="text-primary" scope="col">CIN</th>
-                                        <th class="text-primary" scope="col">Phone</th>
-                                        <th class="text-primary text-center" scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Mostafa Rhazlani</th>
-                                        <td>HH2003</td>
-                                        <td>0771537210</td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger w-25">Reserve Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 	
