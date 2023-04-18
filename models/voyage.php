@@ -12,8 +12,8 @@
             $id = $data['id'];
 
             try {
-                $requit = "SELECT voyage.*, train.name_train FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train WHERE id_voyage = :id";
-                $result = DB::connect()->prepare($requit);
+                $query = "SELECT voyage.*, train.* FROM voyage LEFT JOIN train ON voyage.id_train = train.id_train WHERE id_voyage = :id";
+                $result = DB::connect()->prepare($query);
                 $result->execute(array(':id' => $id));
                 $voyage = $result->fetch(PDO::FETCH_OBJ);
                 return $voyage;
@@ -79,11 +79,11 @@
             $result->bindParam(':prix',$data['prix']);
             $result->bindParam(':id_train',$data['id_train']);
         
-            if($result->execute($data)){
-                return 'ok';
-            } else {
-                return 'error';
-            }
+            // if($result->execute($data)){
+            //     return 'ok';
+            // } else {
+            //     return 'error';
+            // }
         }
 
         static public function delete($data) {
@@ -115,6 +115,8 @@
                 echo 'Error' . $ex->getMessage();
             }
         }
+
+        
     }
 
     
