@@ -5,7 +5,9 @@ CREATE TABLE users(
     email varchar(255),
     fullname varchar(255),
     role boolean,
-    password varchar(255)
+    password varchar(255),
+    CIN varchar(255),
+    phone int
 );
 
 DROP TABLE IF EXISTS `train`;
@@ -24,7 +26,7 @@ CREATE TABLE voyage(
     description TEXT,
     date_departure TIMESTAMP,
     date_arrival TIMESTAMP NULL DEFAULT NULL,
-    prix int;
+    prix INT,
     id_train int,
     FOREIGN KEY (id_train) REFERENCES train(id_train) ON DELETE CASCADE
 );
@@ -51,11 +53,11 @@ CREATE TABLE passages(
 
 );
 
-INSERT INTO users(username, email, fullname, role, password) VALUES
-('mostafa', 'admin@gmail.com', 'mostafa rhazlani', 1, md5('123')),
-('othmane', 'user1@gmail.com', 'othmane ghazlani', 0, md5('123')),
-('mostafa', 'user2@gmail.com', 'azdin romani', 0, md5('123')),
-('simo', 'user3@gmail.com', 'simo 6', 0, md5('123'));
+INSERT INTO users(username, email, fullname, role, password, CIN, phone) VALUES
+('mostafa', 'admin@gmail.com', 'mostafa rhazlani', 1, md5('123'), 'HH11111', 0620304050),
+('othmane', 'user1@gmail.com', 'othmane ghazlani', 0, md5('123'), 'HH11111', 0620304050),
+('mostafa', 'user2@gmail.com', 'azdin romani', 0, md5('123'), 'HH11111', 0620304050),
+('simo', 'user3@gmail.com', 'simo 6', 0, md5('123'), 'HH11111', 0620304050);
 
 INSERT INTO train(name_train, photo, capacity) VALUES
 ('ASFAR YASSIN', 'images.png', 30),
